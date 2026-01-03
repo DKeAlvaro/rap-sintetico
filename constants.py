@@ -1,9 +1,9 @@
 SEEDS = [
     # Conceptos Generales
-    "futuro distópico", "vida cotidiana", "barrio peligroso", "amor tóxico",
+    "futuro distópico", "vida cotidiana", "barrio peligroso", "amor tóxico", 
     "comida chatarra", "viajes espaciales", "naturaleza salvaje", "fiesta desenfrenada",
     "dinero y lujo", "soledad urbana", "películas de terror", "deportes extremos",
-    "teorías conspirativas", "alienígenes", "apocalipsis zombie", "inteligencia artificial",
+    "teorías conspirativas", "alienígenas", "apocalipsis zombie", "inteligencia artificial",
     "cambio climático", "pandemia mundial", "teletrabajo aburrido", "rutina de gimnasio",
     "dieta estricta", "ganar la lotería", "cena de navidad", "vacaciones en la playa",
     "resaca mortal", "primer día de clases", "atasco de tráfico", "viaje en el tiempo",
@@ -27,58 +27,27 @@ SEEDS = [
     "Final del Mundial", "Super Bowl", "Tomorrowland", "Area 51",
     "Triángulo de las Bermudas", "Monte Everest", "La Luna", "Hollywood",
     "Las Vegas", "Times Square", "Amazonas", "Polo Norte",
+
     # Cultura Pop y Tendencias
     "Bitcoin", "NFTs", "TikTok", "Memes", "Haters", "Fake News", "Reggaeton antiguo",
     "Trap argentino", "Batalla de los Gallos", "FMS Internacional",
     "Streaming", "Youtubers", "Influencers", "Cancel Culture", "E-sports",
     "Metaverso", "Cringe", "Viral",
-    # Additional seeds
-    "cultura meme", "guerra fría", "realidad virtual", "IA generativa", "código fuente",
-    "ciberseguridad", "blockchain", "cryptocurrency", "e-sports tournament", "streaming marathon",
-    "vlog de viajes", "cocina vegana", "café artesanal", "vino tinto", "cerveza artesanal",
-    "sushi", "taco", "pizzas gourmet", "ciclismo urbano", "surf", "skateboarding",
-    "parque temático", "circuito de carreras", "carrera de drones", "ciencia ficción retro",
-    "retro gaming", "pixel art", "anime", "manga", "k-pop", "j-pop", "bollywood", "telenovela",
-    "cómic", "novela gráfica", "poesía slam", "spoken word", "beatbox battle",
-    "freestyle battle", "rap battle", "clash of clans", "league of legends", "valorant",
-    "overwatch", "minecraft", "fortnite", "call of duty", "apex legends",
-    "battle royale", "survival horror", "zombie apocalypse", "space opera", "steampunk",
-    "cyberpunk", "fantasy epic", "mythology", "legendary swords", "dragons", "unicorns",
-    "myths", "gods", "goddesses"
-"galaxy exploration",
-"quantum computing",
-"street art",
-"graffiti",
-"street fashion",
-"vintage cars",
-"retro vinyl",
-"classic literature",
-"philosophy of mind",
-"existential crisis"]
-
-STYLES = [
-    "agresivo", "melancólico", "filosófico", "humorístico", "old school",
-    "trap futurista", "poético", "sarcástico", "metriquer", "flow pesado",
-    "doble tempo", "hardcore", "ingenioso", "competitivo", "a capella",
-    "reggae vibe", "underground", "comercial", "romántico", "triste",
-    "épico", "oscuro", "luminoso", "relajado", "frenético", "narrativo",
-    "absurdo", "político", "consciente", "lo-fi", "drill", "reguetón",
-    "mambo", "flamenco flow",
-    # Additional styles
-    "gospel", "soulful", "cinematic", "experimental", "ambient", "psychedelic",
-    "gritty", "minimal", "jazzy", "boom bap", "trap", "drill", "samba",
-    "reggaeton", "cumbia", "bossa nova", "metal", "rock", "punk", "ska",
-    "dubstep", "future bass", "chillhop", "lo-fi hip hop", "vaporwave",
-    "synthwave", "darkwave", "industrial", "post-punk", "new wave",
-    "glitch", "techno", "house", "deep house", "progressive house",
-    "trance"
-"psychedelic rock",
-"electro swing",
-"chillwave",
-"lo-fi jazz",
-"future funk",
-"glitch hop",
-"acid house",
-"breakbeat",
-"drum and bass",
-"hardstyle"]
+    
+    # Celebridades y Deporte
+    "Lionel Messi", "Cristiano Ronaldo", "Michael Jordan", "LeBron James",
+    "Elon Musk", "Jeff Bezos", "Ibai Llanos", "Rubius", "Shakira", "Karol G",
+    "Quevedo", "Rosalía", "Bad Gyal", "Will Smith", "Dwayne Johnson",
+    
+    # Más Marcas y Tecnología
+    "Burger King", "Puma", "Louis Vuitton", "Balenciaga", "Prada", "Versace",
+    "Nintendo Switch", "Xbox Series X", "IKEA", "H&M", "Toyota", "Honda",
+    "Windows", "Google", "Facebook", "Instagram", "Twitter / X", "Uber",
+    
+    # Objetos y Cosas Tangibles
+    "Pizza de pepperoni", "Sushi", "Hamburguesa doble", "Tacos picantes",
+    "Coche deportivo", "Yate de lujo", "Jet privado", "Micrófono de oro",
+    "Zapatillas Jordan", "Reloj Patek Philippe", "Cadena de oro", "Gorra New Era",
+    "Skate", "Tabla de surf", "Balón de fútbol", "Consola retro"
+]
+print(len(SEEDS))
