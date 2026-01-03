@@ -1,4 +1,4 @@
-import os, re
+import os, re, json
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -73,7 +73,7 @@ def has_rhyme(text: str) -> bool:
     # (Usamos set para ver si se reduce la cantidad de elementos únicos)
     if not endings: return False
     return len(set(endings)) < len(endings)
-    
+
 def generate(topic: str) -> None:
     try:
         resp = client.chat.completions.create(
@@ -85,12 +85,78 @@ def generate(topic: str) -> None:
             stream=False,
         )
         rap = resp.choices[0].message.content
-        print(f"Rap generado:\n{rap}")
-        print("RIMA APROBADA" if has_rhyme(rap) else "RIMA DESCARTADA")
+        is_valid = has_rhyme(rap)
+        print(f"Rima:\n{rap}")
+        print("RIMA APROBADA" if is_valid else "RIMA DESCARTADA")
         print()
+        return {"topic": topic, "rap": rap} if is_valid else None
     except Exception as e:
         print(f"Error API: {e}")
+        return None
+
+import random
+
+TOPICS = [
+    "la vida en la calle",
+    "el futuro de la tecnología",
+    "un amor perdido",
+    "la lucha por el éxito",
+    "viajes espaciales",
+    "la naturaleza salvaje",
+    "mitología antigua",
+    "el día a día en la oficina",
+    "videojuegos retro",
+    "la cocina de la abuela",
+    "El Quinto Escalón",
+    "Final de la FMS",
+    "Batalla contra Arkano",
+    "El flow de Chuty",
+    "Aczino en la tarima",
+    "Duki en la plaza",
+    "Wos tirando rimas",
+    "Red Bull Batalla de los Gallos",
+    "Improvisación con objetos",
+    "Minuto a sangre",
+    "Doble tempo extremo",
+    "Réplica injusta",
+    "El jurado votó mal",
+    "Leyendas del freestyle",
+    "Cultura Hip Hop",
+    "Graffiti en el tren",
+    "Beatbox en la esquina"
+]
+
+STYLES = [
+    "agresivo",
+    "melancólico",
+    "filosófico",
+    "humorístico",
+    "old school",
+    "trap futurista",
+    "poético",
+    "sarcástico",
+    "metriquer",
+    "flow pesado",
+    "doble tempo",
+    "hardcore",
+    "ingenioso",
+    "competitivo",
+    "a capella",
+    "reggae vibe",
+    "underground",
+    "comercial"
+]
 
 if __name__ == "__main__":
-    for _ in range(10):
-        generate("cualquier tema")
+    dataset_file = "dataset.jsonl"
+    with open(dataset_file, "a", encoding="utf-8") as f:
+        for _ in range(10):
+            topic = random.choice(TOPICS)
+            style = random.choice(STYLES)
+            context = f"Tema: {topic}. Estilo: {style}"
+            print(f"Contexto: {context}")
+            result = generate(context)
+            if result:
+                f.write(json.dumps(result, ensure_ascii=False) + "\n")
+                f.flush()
+    print(f"Dataset actualizado en {dataset_file}")
