@@ -12,4 +12,4 @@ client_rhyme = OpenAI(
 )
 
 DATASET_FILE = "dataset.jsonl"
-N_GENERATIONS = 10
+N_GENERATIONS = 100
