@@ -1,18 +1,14 @@
 import json
-from config import DATASET_FILE
-from generator import generate_context, generate_rhyme
+from config import DATASET_FILE, N_GENERATIONS
+from generator import generate_rhyme
 
 def main():
-    print("Iniciando generación con Doble LLM...")
+    print("Iniciando generación aleatoria (Single LLM)...")
     
     with open(DATASET_FILE, "a", encoding="utf-8") as f:
-        for i in range(10):
-            # Paso 1: Generar Contexto
-            context = generate_context()
-            print(f"[{i+1}/10] Contexto (LLM 1): {context}")
-            
-            # Paso 2: Generar Rima (LLM 2)
-            result = generate_rhyme(context)
+        for i in range(N_GENERATIONS):
+            print(f"[{i+1}/{N_GENERATIONS}] Generando...")
+            result = generate_rhyme()
             
             if result:
                 f.write(json.dumps(result, ensure_ascii=False) + "\n")
