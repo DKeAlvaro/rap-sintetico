@@ -12,4 +12,5 @@ client_rhyme = OpenAI(
 )
 
 DATASET_FILE = "dataset.jsonl"
-N_GENERATIONS = 100
+N_GENERATIONS = 5000
+MAX_WORKERS = 100

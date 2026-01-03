@@ -1,6 +1,6 @@
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from config import DATASET_FILE, N_GENERATIONS
+from config import DATASET_FILE, N_GENERATIONS, MAX_WORKERS
 from generator import generate_rhyme
 from tqdm import tqdm
 
@@ -10,7 +10,7 @@ def main():
     valid_count = 0
     
     # Paralelizamos las llamadas a la API (I/O bound)
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = [executor.submit(generate_rhyme) for _ in range(N_GENERATIONS)]
         
         with open(DATASET_FILE, "a", encoding="utf-8") as f:
