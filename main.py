@@ -1,13 +1,13 @@
 import json
 from config import DATASET_FILE, N_GENERATIONS
 from generator import generate_rhyme
+from tqdm import tqdm
 
 def main():
-    print("Iniciando generación aleatoria (Single LLM)...")
+    print("Iniciando generación aleatoria...")
     
     with open(DATASET_FILE, "a", encoding="utf-8") as f:
-        for i in range(N_GENERATIONS):
-            print(f"[{i+1}/{N_GENERATIONS}] Generando...")
+        for i in tqdm(range(N_GENERATIONS)):
             result = generate_rhyme()
             
             if result:

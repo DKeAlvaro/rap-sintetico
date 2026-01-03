@@ -20,11 +20,11 @@ def generate_rhyme() -> dict | None:
         )
         rap = resp.choices[0].message.content
         is_valid = has_rhyme(rap)
-        
-        print(f"[{context}]")
-        print(f"Rima:\n{rap}")
-        print("RIMA APROBADA" if is_valid else "RIMA DESCARTADA")
-        print()
+        # print()
+        # print(f"[{context}]")
+        # print(f"Rima:\n{rap}")
+        # print("RIMA APROBADA" if is_valid else "RIMA DESCARTADA")
+        # print()
         
         return {"topic": context, "rap": rap} if is_valid else None
     except Exception as e:
